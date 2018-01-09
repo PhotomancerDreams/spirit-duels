@@ -51,6 +51,7 @@
     <object>objects\obj_defend_button</object>
     <object>objects\obj_action_selection</object>
     <object>objects\obj_confirm_action_button</object>
+    <object>objects\obj_change_action_button</object>
     <object>objects\obj_confirm_elements_button</object>
     <object>objects\obj_prompt</object>
     <object>objects\obj_evaluator</object>

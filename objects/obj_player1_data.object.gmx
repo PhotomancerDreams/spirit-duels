@@ -526,7 +526,9 @@ if (damage &gt;= 0){
 }
 for(i = 0; i  &lt; 5; i++){
     cooldowns[i] += 5*spell_cast[i];
-    defending_spell[i] -= spell_cast[i];
+    if(defending_spell[i] &gt;= 1){
+        defending_spell[i] -= spell_cast[i];    
+    }
 }
 focus_level = 1;
 </string>
