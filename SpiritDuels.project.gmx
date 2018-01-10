@@ -24,6 +24,7 @@
     <sprite>sprites\spr_stick_figure_1</sprite>
     <sprite>sprites\spr_action_selection</sprite>
     <sprite>sprites\spr_heart</sprite>
+    <sprite>sprites\spr_cooldown</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_blue</background>
@@ -38,9 +39,9 @@
     <object>objects\obj_button</object>
     <object>objects\obj_water_button</object>
     <object>objects\obj_earth_button</object>
-    <object>objects\obj_shadow_button</object>
     <object>objects\obj_fire_button</object>
     <object>objects\obj_air_button</object>
+    <object>objects\obj_shadow_button</object>
     <object>objects\obj_music_player1</object>
     <object>objects\obj_animator</object>
     <object>objects\obj_player1_data</object>
