@@ -55,7 +55,6 @@
     <object>objects\obj_change_action_button</object>
     <object>objects\obj_play_button</object>
     <object>objects\obj_confirm_elements_button</object>
-    <object>objects\obj_prompt</object>
     <object>objects\obj_evaluator</object>
     <object>objects\obj_client</object>
   </objects>
