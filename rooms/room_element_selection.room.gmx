@@ -60,6 +60,7 @@
     <instance objName="obj_shadow_button" x="1019" y="356" name="inst_9388C1A8" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="obj_change_action_button" x="608" y="224" name="inst_E4AF7B20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_arcane_button" x="800" y="736" name="inst_A66A54E9" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="obj_random_element_button" x="992" y="224" name="inst_2F84580C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

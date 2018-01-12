@@ -55,6 +55,7 @@
     <object>objects\obj_action_selection</object>
     <object>objects\obj_confirm_action_button</object>
     <object>objects\obj_change_action_button</object>
+    <object>objects\obj_random_element_button</object>
     <object>objects\obj_play_button</object>
     <object>objects\obj_confirm_elements_button</object>
     <object>objects\obj_evaluator</object>
