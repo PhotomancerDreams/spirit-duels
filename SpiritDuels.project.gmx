@@ -10,11 +10,11 @@
     <sound>sound\snd_Earth_Track</sound>
     <sound>sound\snd_Shadow_Track</sound>
     <sound>sound\snd_Fire_Track</sound>
+    <sound>sound\snd_Arcane_Track</sound>
     <sound>sound\snd_Attack_Track</sound>
-    <sound>sound\snd_SweetMelody_Track</sound>
-    <sound>sound\snd_Focus_Track</sound>
     <sound>sound\snd_Defend_Track</sound>
     <sound>sound\snd_AMinor_Track</sound>
+    <sound>sound\snd_Focus_Track</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_element_pentacle</sprite>
@@ -25,6 +25,7 @@
     <sprite>sprites\spr_action_selection</sprite>
     <sprite>sprites\spr_heart</sprite>
     <sprite>sprites\spr_cooldown</sprite>
+    <sprite>sprites\spr_arcane_symbol</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_blue</background>
@@ -38,6 +39,7 @@
     <object>objects\obj_element_pentacle</object>
     <object>objects\obj_button</object>
     <object>objects\obj_water_button</object>
+    <object>objects\obj_arcane_button</object>
     <object>objects\obj_earth_button</object>
     <object>objects\obj_fire_button</object>
     <object>objects\obj_air_button</object>
