@@ -19,7 +19,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -115,7 +115,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -211,7 +211,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -307,7 +307,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -443,7 +443,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -539,7 +539,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -635,7 +635,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -851,7 +851,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -947,7 +947,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>

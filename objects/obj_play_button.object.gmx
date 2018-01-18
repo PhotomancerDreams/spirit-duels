@@ -56,7 +56,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>524</id>
@@ -117,10 +117,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var _x = x -view_xview[0];
-var _y = y - view_yview[0];
-draw_text_transformed(_x, _y-20, "Play", 1, 1, 0);
-draw_text_transformed(_x, _y-200, "Spirit Duels", 4, 4, 0);
+            <string>//var _x = x -view_xview[0];
+//var _y = y - view_yview[0];
+draw_text_transformed(x, y-20, "Play", 1, 1, 0);
+draw_text_transformed(x, y-200, "Spirit Duels", 4, 4, 0);
 </string>
           </argument>
         </arguments>

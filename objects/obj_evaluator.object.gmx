@@ -19,7 +19,7 @@
         <exetype>1</exetype>
         <functionname>action_set_alarm</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>-1</relative>
         <isnot>0</isnot>
         <arguments>
@@ -43,7 +43,7 @@
         <exetype>1</exetype>
         <functionname>action_set_alarm</functionname>
         <codestring></codestring>
-        <whoName>obj_player2_data</whoName>
+        <whoName>obj_opponent_data</whoName>
         <relative>-1</relative>
         <isnot>0</isnot>
         <arguments>
@@ -115,7 +115,7 @@
         <exetype>1</exetype>
         <functionname>action_set_alarm</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>-1</relative>
         <isnot>0</isnot>
         <arguments>
@@ -194,11 +194,11 @@
           <argument>
             <kind>1</kind>
             <string>for(i = 0; i  &lt; 5; i++){
-    if (obj_player1_data.cooldowns[i] &gt;= 1){
-        obj_player1_data.cooldowns[i] -= 1
+    if (obj_player_data.cooldowns[i] &gt;= 1){
+        obj_player_data.cooldowns[i] -= 1
     }
-    if (obj_player2_data.cooldowns[i] &gt;= 1){
-        obj_player2_data.cooldowns[i] -= 1
+    if (obj_opponent_data.cooldowns[i] &gt;= 1){
+        obj_opponent_data.cooldowns[i] -= 1
     }
 }
 </string>
@@ -215,7 +215,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -305,7 +305,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player2_data</whoName>
+        <whoName>obj_opponent_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>

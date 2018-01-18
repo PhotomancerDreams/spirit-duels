@@ -39,7 +39,7 @@
         <exetype>1</exetype>
         <functionname>action_set_alarm</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -63,7 +63,7 @@
         <exetype>1</exetype>
         <functionname>action_set_alarm</functionname>
         <codestring></codestring>
-        <whoName>obj_player2_data</whoName>
+        <whoName>obj_opponent_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -102,7 +102,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>524</id>

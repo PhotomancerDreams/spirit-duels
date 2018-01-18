@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -90,7 +90,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>524</id>
@@ -127,8 +127,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(obj_player1_data.arcane &gt;= 1){
-    draw_text_transformed(x, y+32, "Arcane: " + string(obj_player1_data.arcane), 1.8, 1.8, 0);
+            <string>if(obj_player_data.arcane &gt;= 1){
+    draw_text_transformed(x, y+32, "Arcane: " + string(obj_player_data.arcane), 1.8, 1.8, 0);
 }
 </string>
           </argument>

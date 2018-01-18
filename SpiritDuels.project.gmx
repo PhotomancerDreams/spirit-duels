@@ -26,6 +26,9 @@
     <sprite>sprites\spr_heart</sprite>
     <sprite>sprites\spr_cooldown</sprite>
     <sprite>sprites\spr_arcane_symbol</sprite>
+    <sprite>sprites\spr_star</sprite>
+    <sprite>sprites\spr_focus_token</sprite>
+    <sprite>sprites\spr_health_token</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_blue</background>
@@ -46,8 +49,8 @@
     <object>objects\obj_shadow_button</object>
     <object>objects\obj_music_player1</object>
     <object>objects\obj_animator</object>
-    <object>objects\obj_player1_data</object>
-    <object>objects\obj_player2_data</object>
+    <object>objects\obj_player_data</object>
+    <object>objects\obj_opponent_data</object>
     <object>objects\player</object>
     <object>objects\obj_attack_button</object>
     <object>objects\obj_focus_button</object>

@@ -70,6 +70,7 @@ buffer_write(buffer, buffer_u8, obj_player1_data.earth);
 buffer_write(buffer, buffer_u8, obj_player1_data.fire);
 buffer_write(buffer, buffer_u8, obj_player1_data.air);
 buffer_write(buffer, buffer_u8, obj_player1_data.shadow);
+buffer_write(buffer, buffer_u8, obj_player1_data.arcane);
 
 network_send_packet(socket, buffer, buffer_tell(buffer));
 </string>

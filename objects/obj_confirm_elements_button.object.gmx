@@ -19,7 +19,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -110,7 +110,7 @@
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>524</id>
@@ -169,7 +169,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -285,7 +285,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -401,7 +401,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -517,7 +517,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -633,7 +633,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -749,7 +749,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -865,7 +865,7 @@
         <exetype>1</exetype>
         <functionname>action_if_variable</functionname>
         <codestring></codestring>
-        <whoName>obj_player1_data</whoName>
+        <whoName>obj_player_data</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -970,30 +970,6 @@
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if((obj_player1_data.water == 1) &amp;&amp; (obj_player1_data.earth == 1)){
-    draw_set_colour(c_lime);
-    draw_text_transformed(-20, -100, "Life", 3, 3, 0);
-}
-</string>
-          </argument>
-        </arguments>
       </action>
     </event>
   </events>
