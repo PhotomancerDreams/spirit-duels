@@ -62,15 +62,15 @@ buffer = buffer_create(size, type, alignment);
 buffer_seek(buffer, buffer_seek_start, 0);
 
 buffer_write(buffer, buffer_u8, 1);
-buffer_write(buffer, buffer_u8, obj_player1_data.attack);
-buffer_write(buffer, buffer_u8, obj_player1_data.defend);
-buffer_write(buffer, buffer_u8, obj_player1_data.focus);
-buffer_write(buffer, buffer_u8, obj_player1_data.water);
-buffer_write(buffer, buffer_u8, obj_player1_data.earth);
-buffer_write(buffer, buffer_u8, obj_player1_data.fire);
-buffer_write(buffer, buffer_u8, obj_player1_data.air);
-buffer_write(buffer, buffer_u8, obj_player1_data.shadow);
-buffer_write(buffer, buffer_u8, obj_player1_data.arcane);
+buffer_write(buffer, buffer_u8, obj_player_data.attack);
+buffer_write(buffer, buffer_u8, obj_player_data.defend);
+buffer_write(buffer, buffer_u8, obj_player_data.focus);
+buffer_write(buffer, buffer_u8, obj_player_data.water);
+buffer_write(buffer, buffer_u8, obj_player_data.earth);
+buffer_write(buffer, buffer_u8, obj_player_data.fire);
+buffer_write(buffer, buffer_u8, obj_player_data.air);
+buffer_write(buffer, buffer_u8, obj_player_data.shadow);
+buffer_write(buffer, buffer_u8, obj_player_data.arcane);
 
 network_send_packet(socket, buffer, buffer_tell(buffer));
 </string>

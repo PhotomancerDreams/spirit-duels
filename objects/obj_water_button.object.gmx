@@ -430,7 +430,7 @@
           <argument>
             <kind>1</kind>
             <string>depth = -1000;
-draw_text_transformed(x+0, y-36, obj_player1_data.cooldowns[0], 1.8, 1.8, 0);
+draw_text_transformed(x+0, y-36, obj_player_data.cooldowns[0], 1.8, 1.8, 0);
 </string>
           </argument>
         </arguments>

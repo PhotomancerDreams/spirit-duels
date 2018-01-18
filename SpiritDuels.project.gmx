@@ -42,11 +42,11 @@
     <object>objects\obj_element_pentacle</object>
     <object>objects\obj_button</object>
     <object>objects\obj_water_button</object>
-    <object>objects\obj_arcane_button</object>
     <object>objects\obj_earth_button</object>
     <object>objects\obj_fire_button</object>
     <object>objects\obj_air_button</object>
     <object>objects\obj_shadow_button</object>
+    <object>objects\obj_arcane_button</object>
     <object>objects\obj_music_player1</object>
     <object>objects\obj_animator</object>
     <object>objects\obj_player_data</object>
