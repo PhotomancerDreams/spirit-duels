@@ -61,8 +61,8 @@
         <exetype>1</exetype>
         <functionname>action_set_alarm</functionname>
         <codestring></codestring>
-        <whoName>obj_client</whoName>
-        <relative>-1</relative>
+        <whoName>obj_player_data</whoName>
+        <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>

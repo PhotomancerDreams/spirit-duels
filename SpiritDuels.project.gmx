@@ -29,17 +29,25 @@
     <sprite>sprites\spr_star</sprite>
     <sprite>sprites\spr_focus_token</sprite>
     <sprite>sprites\spr_health_token</sprite>
+    <sprite>sprites\spr_broken_health_token</sprite>
+    <sprite>sprites\spr_focus_token_2</sprite>
+    <sprite>sprites\spr_flower_token</sprite>
+    <sprite>sprites\spr_rainbow_gem_token</sprite>
+    <sprite>sprites\spr_gem_token</sprite>
+    <sprite>sprites\spr_arcane_defense</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_blue</background>
     <background>background\Island_Background</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_received_packet.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_Segoe</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_element_pentacle</object>
     <object>objects\obj_button</object>
     <object>objects\obj_water_button</object>
     <object>objects\obj_earth_button</object>
@@ -51,18 +59,21 @@
     <object>objects\obj_animator</object>
     <object>objects\obj_player_data</object>
     <object>objects\obj_opponent_data</object>
-    <object>objects\player</object>
+    <object>objects\obj_player</object>
+    <object>objects\obj_opponent</object>
     <object>objects\obj_attack_button</object>
     <object>objects\obj_focus_button</object>
     <object>objects\obj_defend_button</object>
     <object>objects\obj_action_selection</object>
+    <object>objects\obj_element_pentacle</object>
     <object>objects\obj_confirm_action_button</object>
     <object>objects\obj_change_action_button</object>
     <object>objects\obj_random_element_button</object>
     <object>objects\obj_play_button</object>
+    <object>objects\obj_restart_button</object>
     <object>objects\obj_confirm_elements_button</object>
-    <object>objects\obj_evaluator</object>
     <object>objects\obj_client</object>
+    <object>objects\obj_prompt</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_title_screen</room>

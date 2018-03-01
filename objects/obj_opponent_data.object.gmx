@@ -275,6 +275,30 @@
       </action>
       <action>
         <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>max_health</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>player_health</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -744,14 +768,18 @@ if(defend == 1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for(i = 0; i &lt; player_health; i++){
+            <string>for(i = 0; i &lt; max_health; i++){
     if(i &lt;= 19){
-        draw_sprite(spr_health_token, 0, room_width - 20 - (i*32), 20)
+        if(i&lt;player_health){
+            draw_sprite(spr_health_token, 0, room_width - 20 - (i*32), 20)
+        }else{
+            draw_sprite(spr_broken_health_token, 0, room_width - 20 - (i*32), 20)
+        }
     }
 }
 for(i = 0; i &lt; focus_level; i++){
     if(i &lt;= 9){
-        draw_sprite(spr_focus_token, 0, room_width - 36 - (i*64), 60)
+        draw_sprite(spr_gem_token, 0, room_width - 36 - (i*64), 70)
     }
 }
 </string>

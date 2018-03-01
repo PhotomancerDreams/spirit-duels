@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>//Initialize the client
 var type = network_socket_tcp;
-var ip = "192.168.1.121";
+var ip = "127.0.0.1";
 var port = 8000;
 socket = network_create_socket(type);
 connection = network_connect(socket, ip, port);
@@ -37,6 +37,30 @@ var type = buffer_fixed;
 var alignment = 1;
 buffer = buffer_create(size, type, alignment);
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -65,14 +89,43 @@ buffer_write(buffer, buffer_u8, 1);
 buffer_write(buffer, buffer_u8, obj_player_data.attack);
 buffer_write(buffer, buffer_u8, obj_player_data.defend);
 buffer_write(buffer, buffer_u8, obj_player_data.focus);
-buffer_write(buffer, buffer_u8, obj_player_data.water);
-buffer_write(buffer, buffer_u8, obj_player_data.earth);
-buffer_write(buffer, buffer_u8, obj_player_data.fire);
-buffer_write(buffer, buffer_u8, obj_player_data.air);
-buffer_write(buffer, buffer_u8, obj_player_data.shadow);
-buffer_write(buffer, buffer_u8, obj_player_data.arcane);
+for(i = 0; i &lt; 6; i++){
+    buffer_write(buffer, buffer_u8, obj_player_data.spell_cast[i]);
+}
 
 network_send_packet(socket, buffer, buffer_tell(buffer));
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Check for clients and data
+var type_event = async_load[? "type"];
+switch(type_event) {
+      case network_type_data:
+        //Handle the data
+        var buffer = async_load[? "buffer"];
+        buffer_seek(buffer, buffer_seek_start, 0);
+        scr_received_packet(buffer);
+        break;
+}
 </string>
           </argument>
         </arguments>

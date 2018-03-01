@@ -25,35 +25,46 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_player_data.water = 0;
-obj_player_data.earth = 0;
-obj_player_data.fire = 0;
-obj_player_data.air = 0;
-obj_player_data.shadow = 0;
-
-var random_element = 5;
-randomize();
-
-while(true){
-    random_element = irandom(4);
-    if(obj_player_data.cooldowns[random_element] = 0){
-        break;
+            <string>var valid = false;
+for(i = 0; i &lt; 5; i++){
+    if(obj_player_data.cooldowns[i] == 0){
+        valid = true;
+        break
     }
 }
 
-switch(random_element){
-    case 0: obj_player_data.water = 1;
+if(valid){
+    
+    obj_player_data.water = 0;
+    obj_player_data.earth = 0;
+    obj_player_data.fire = 0;
+    obj_player_data.air = 0;
+    obj_player_data.shadow = 0;
+    
+    var random_element = 5;
+    randomize();
+    
+    while(true){
+        random_element = irandom(4);
+        if(obj_player_data.cooldowns[random_element] == 0){
             break;
-    case 1: obj_player_data.earth = 1;
-            break;
-    case 2: obj_player_data.fire = 1;
-            break;
-    case 3: obj_player_data.air = 1;
-            break;
-    case 4: obj_player_data.shadow = 1;
-            break;
-    default: obj_player_data.arcane = 1;
-            break;
+        }
+    }
+    
+    switch(random_element){
+        case 0: obj_player_data.water = 1;
+                break;
+        case 1: obj_player_data.earth = 1;
+                break;
+        case 2: obj_player_data.fire = 1;
+                break;
+        case 3: obj_player_data.air = 1;
+                break;
+        case 4: obj_player_data.shadow = 1;
+                break;
+        default: obj_player_data.arcane = 1;
+                break;
+    }
 }
 </string>
           </argument>
