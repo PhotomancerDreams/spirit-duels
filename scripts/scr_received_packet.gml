@@ -35,6 +35,5 @@ if(player_id != noone){
     obj_player_data.alarm[2] = 1;
     obj_opponent_data.alarm[2] = 1;
     obj_music_player1.alarm[0] = 2;
-    obj_player.alarm[0] = 2;
     room_goto(2);
 }
