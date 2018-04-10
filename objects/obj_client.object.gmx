@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>//Initialize the client
 var type = network_socket_tcp;
-var ip = "127.0.0.1";
+//var ip = "127.0.0.1";
+var ip = "192.168.1.111";
 var port = 8000;
 socket = network_create_socket(type);
 connection = network_connect(socket, ip, port);

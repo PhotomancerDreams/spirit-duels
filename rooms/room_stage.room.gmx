@@ -59,6 +59,8 @@
     <instance objName="obj_client" x="256" y="160" name="inst_49591A30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_prompt" x="704" y="256" name="inst_62C2C5AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_opponent" x="1280" y="704" name="inst_EF791311" locked="0" code="" scaleX="-10.5" scaleY="10.5" colour="4294967295" rotation="0"/>
+    <instance objName="obj_element_player_cooldowns" x="128" y="192" name="inst_4C7036C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_element_opponent_cooldowns" x="1472" y="192" name="inst_1EA99451" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

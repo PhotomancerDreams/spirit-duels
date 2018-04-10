@@ -77,6 +77,8 @@
     <object>objects\obj_defend_button</object>
     <object>objects\obj_action_selection</object>
     <object>objects\obj_element_pentacle</object>
+    <object>objects\obj_element_player_cooldowns</object>
+    <object>objects\obj_element_opponent_cooldowns</object>
     <object>objects\obj_confirm_action_button</object>
     <object>objects\obj_change_action_button</object>
     <object>objects\obj_random_element_button</object>

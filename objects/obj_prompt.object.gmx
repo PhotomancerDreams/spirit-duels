@@ -51,7 +51,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text_transformed(room_width / 2, (room_height / 2) - 100, prompt_text, 2, 2, 0);
+            <string>draw_set_colour(c_black)
+draw_text_transformed(room_width / 2, (room_height / 2) - 100, prompt_text, 2, 2, 0);
 </string>
           </argument>
         </arguments>
