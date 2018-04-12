@@ -565,6 +565,7 @@ spell_cast[3] = air;
 spell_cast[4] = shadow;
 spell_cast[5] = arcane;
 
+/*
 if(focus == 1){
     focus_level += 1
 }
@@ -575,32 +576,9 @@ if(defend == 1){
     }
     focus_level = 1
 }
+*/
  
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>301</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_alarm</functionname>
-        <codestring></codestring>
-        <whoName>obj_client</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>

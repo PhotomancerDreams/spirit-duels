@@ -46,6 +46,7 @@
     <sprite>sprites\spr_air_defense_layer2</sprite>
     <sprite>sprites\spr_earth_defense_layer1</sprite>
     <sprite>sprites\spr_earth_defense_layer2</sprite>
+    <sprite>sprites\spr_strength_display</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_blue</background>
@@ -87,6 +88,7 @@
     <object>objects\obj_confirm_elements_button</object>
     <object>objects\obj_client</object>
     <object>objects\obj_prompt</object>
+    <object>objects\obj_strength_display</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_title_screen</room>
