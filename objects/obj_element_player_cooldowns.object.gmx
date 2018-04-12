@@ -25,40 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var near_x = sprite_width / 5.5
-var far_x = sprite_width / 3.5
-var lower_y = sprite_height / 4
-var mid_y = - sprite_height / 12
-var upper_y = - sprite_height / 3.75
-var target = obj_player_data
-var text_height = 20
-
-draw_self()
-draw_sprite(spr_arcane_symbol, 0, x, y + sprite_height/2.5)
-
-draw_set_colour(c_white)
-if(target.cooldowns[0] &gt;= 1){
-    draw_sprite(spr_cooldown, 0, x+near_x, y+lower_y)
-    draw_text_transformed(x+near_x, y+lower_y-text_height, target.cooldowns[0], 1, 1, 0);
+            <string>if(room != room_element_selection){  
+    var near_x = sprite_width / 5.5
+    var far_x = sprite_width / 3.5
+    var lower_y = sprite_height / 4
+    var mid_y = - sprite_height / 12
+    var upper_y = - sprite_height / 3.75
+    var target = obj_player_data
+    var text_height = 20
+    
+    draw_self()
+    draw_sprite(spr_arcane_symbol, 0, x, y + sprite_height/2.5)
+    
+    draw_set_colour(c_white)
+    if(target.cooldowns[0] &gt;= 1){
+        draw_sprite(spr_cooldown, 0, x+near_x, y+lower_y)
+        draw_text_transformed(x+near_x, y+lower_y-text_height, target.cooldowns[0], 1, 1, 0);
+    }
+    if(target.cooldowns[1] &gt;= 1){
+        draw_sprite(spr_cooldown, 0, x-near_x, y+lower_y)
+        draw_text_transformed(x-near_x, y+lower_y-text_height, target.cooldowns[1], 1, 1, 0);
+    }
+    if(target.cooldowns[2] &gt;= 1){
+        draw_sprite(spr_cooldown, 0, x-far_x, y+mid_y)
+        draw_text_transformed(x-far_x, y+mid_y-text_height, target.cooldowns[2], 1, 1, 0);
+    }
+    if(target.cooldowns[3] &gt;= 1){
+        draw_sprite(spr_cooldown, 0, x, y+upper_y)
+        draw_text_transformed(x, y+upper_y-text_height, target.cooldowns[3], 1, 1, 0);
+    }
+    if(target.cooldowns[4] &gt;= 1){
+        draw_sprite(spr_cooldown, 0, x+far_x, y+mid_y)
+        draw_text_transformed(x+far_x, y+mid_y-text_height, target.cooldowns[4], 1, 1, 0);
+    }
 }
-if(target.cooldowns[1] &gt;= 1){
-    draw_sprite(spr_cooldown, 0, x-near_x, y+lower_y)
-    draw_text_transformed(x-near_x, y+lower_y-text_height, target.cooldowns[1], 1, 1, 0);
-}
-if(target.cooldowns[2] &gt;= 1){
-    draw_sprite(spr_cooldown, 0, x-far_x, y+mid_y)
-    draw_text_transformed(x-far_x, y+mid_y-text_height, target.cooldowns[2], 1, 1, 0);
-}
-if(target.cooldowns[3] &gt;= 1){
-    draw_sprite(spr_cooldown, 0, x, y+upper_y)
-    draw_text_transformed(x, y+upper_y-text_height, target.cooldowns[3], 1, 1, 0);
-}
-if(target.cooldowns[4] &gt;= 1){
-    draw_sprite(spr_cooldown, 0, x+far_x, y+mid_y)
-    draw_text_transformed(x+far_x, y+mid_y-text_height, target.cooldowns[4], 1, 1, 0);
-}
-
-
 </string>
           </argument>
         </arguments>
