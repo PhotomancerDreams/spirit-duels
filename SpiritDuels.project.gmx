@@ -47,6 +47,14 @@
     <sprite>sprites\spr_earth_defense_layer1</sprite>
     <sprite>sprites\spr_earth_defense_layer2</sprite>
     <sprite>sprites\spr_strength_display</sprite>
+    <sprite>sprites\spr_spellbook</sprite>
+    <sprite>sprites\spr_spell_prism_frame</sprite>
+    <sprite>sprites\spr_spell_prism_water_pane</sprite>
+    <sprite>sprites\spr_spell_prism_earth_pane</sprite>
+    <sprite>sprites\spr_spell_prism_fire_pane</sprite>
+    <sprite>sprites\spr_spell_prism_air_pane</sprite>
+    <sprite>sprites\spr_spell_prism_shadow_pane</sprite>
+    <sprite>sprites\spr_spell_prism_arcane_pane</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_blue</background>
@@ -55,6 +63,9 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_received_packet.gml</script>
+    <script>scripts\scr_relative_spell_strength.gml</script>
+    <script>scripts\scr_base_spell_strength.gml</script>
+    <script>scripts\scr_draw_spell_prism.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_Segoe</font>
@@ -89,6 +100,7 @@
     <object>objects\obj_client</object>
     <object>objects\obj_prompt</object>
     <object>objects\obj_strength_display</object>
+    <object>objects\obj_spellbook</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_title_screen</room>
