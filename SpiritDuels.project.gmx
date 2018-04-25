@@ -55,6 +55,9 @@
     <sprite>sprites\spr_spell_prism_air_pane</sprite>
     <sprite>sprites\spr_spell_prism_shadow_pane</sprite>
     <sprite>sprites\spr_spell_prism_arcane_pane</sprite>
+    <sprite>sprites\spr_arcane_defense_runes</sprite>
+    <sprite>sprites\spr_shadow_defense_layer1</sprite>
+    <sprite>sprites\spr_shadow_defense_layer2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_blue</background>
