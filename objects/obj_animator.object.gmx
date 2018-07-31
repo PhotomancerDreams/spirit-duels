@@ -8,6 +8,181 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>player_ready = true
+opponent_ready = true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Hit Animation on Player
+effect_create_below(ef_firework, obj_player.x, obj_player.y, 2, c_yellow)
+obj_player.took_damage = true
+obj_player.image_index = 0
+opponent_ready = true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Wait until animation complete and both dummies ready with results
+if(instance_number(obj_dummy_data) &gt;= 1){
+    obj_dummy_data.alarm[0] = 1
+}else{
+    alarm[3] = 1
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Hit Animation on Opponent
+effect_create_below(ef_firework, obj_opponent.x, obj_opponent.y, 2, c_yellow)
+obj_opponent.took_damage = true
+obj_opponent.image_index = 0
+player_ready = true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Cast Animation for Player
+if(obj_player_data.attack &gt;= 1){
+    effect_create_below(ef_explosion, obj_player.x, obj_player.y, 2, c_red)
+    for(i = 0; i &lt; 6; i++){
+        if(obj_player_data.spell_cast[i] &gt;= 1){
+            obj_player_data.defending_spell[i] -= obj_player_data.spell_cast[i]
+            player_spell = instance_create(obj_player.x, obj_player.y, obj_attacking_spell)
+            player_spell.target = obj_opponent
+            player_spell.spell_array[i] = obj_player_data.spell_cast[i]
+        }
+    }
+    //Time-out for backup, in case the attacking spell doesn't connect
+    alarm[2] = 300
+}else if(obj_player_data.defend &gt;= 1){
+    effect_create_below(ef_flare, obj_player.x, obj_player.y, 2, c_blue)
+    for(i = 0; i &lt; 6; i++){
+        obj_player_data.defending_spell[i] = obj_player_data.spell_cast[i]
+    }
+    player_ready = true
+}else if(obj_player_data.focus &gt;= 1){
+    effect_create_below(ef_spark, obj_player.x, obj_player.y, 2, c_purple)
+    player_ready = true
+}
+
+//Cast Animation for Opponent
+if(obj_opponent_data.attack &gt;= 1){
+    effect_create_below(ef_explosion, obj_opponent.x, obj_opponent.y, 2, c_red)
+    for(i = 0; i &lt; 6; i++){
+        obj_opponent_data.defending_spell[i] -= obj_opponent_data.spell_cast[i]
+        opponent_spell = instance_create(obj_opponent.x, obj_opponent.y, obj_attacking_spell)
+        opponent_spell.target = obj_player
+        opponent_spell.spell_array[i] = obj_opponent_data.spell_cast[i]
+    }
+    //Time-out for backup, in case the attacking spell doesn't connect
+    alarm[4] = 300
+}else if(obj_opponent_data.defend &gt;= 1){
+    effect_create_below(ef_flare, obj_opponent.x, obj_opponent.y, 2, c_blue)
+    for(i = 0; i &lt; 6; i++){
+        obj_opponent_data.defending_spell[i] = obj_opponent_data.spell_cast[i]
+    }
+    opponent_ready = true
+}else if(obj_opponent_data.focus &gt;= 1){
+    effect_create_below(ef_spark, obj_opponent.x, obj_opponent.y, 2, c_purple)
+    opponent_ready = true
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -1094,6 +1269,33 @@
           <argument>
             <kind>4</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(player_ready == true and opponent_ready == true){
+    alarm[3] = 30
+    player_ready = false
+    opponent_ready = false
+}
+</string>
           </argument>
         </arguments>
       </action>

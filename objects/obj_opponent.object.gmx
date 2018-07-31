@@ -105,6 +105,54 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>def_rotation</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>took_damage</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -284,6 +332,27 @@ if(y &gt;= (starting_y - hover_height)){
         <relative>0</relative>
         <isnot>0</isnot>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>def_rotation = ((def_rotation - 1) mod 360)
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -320,6 +389,12 @@ if(obj_opponent_data.defending_spell[3] &gt;= 1){
     }
 }
 
+if(took_damage = true and image_index &lt; 63){
+    player_sprite = spr_stick_figure_4
+}else{
+    took_damage = false
+}
+
 //Draw layers behind opponent
 if(obj_opponent_data.defending_spell[0] &gt;= 1){
     draw_sprite_ext(spr_water_defense_layer2, -1, x, y, -player_scale, player_scale, 0, c_white, 1);
@@ -333,13 +408,15 @@ if(obj_opponent_data.defending_spell[2] &gt;= 1){
 if(obj_opponent_data.defending_spell[3] &gt;= 1){
     draw_sprite_ext(spr_air_defense_layer2, -1, x, y, -(player_scale*1.6), player_scale*1.6, 0, c_white, 1);
 }
+if(obj_opponent_data.defending_spell[4] &gt;= 1){
+    draw_sprite_ext(spr_shadow_defense_layer2, -1, x-sprite_width/4, y-sprite_height/4, -player_scale*1.4, player_scale*1.4, 0, c_white, 1);
+}
+if(obj_opponent_data.defending_spell[5] &gt;= 1){
+    draw_sprite_ext(spr_arcane_defense_runes, 0, x, y, -player_scale*0.8, player_scale*0.8, def_rotation, c_white, 0.8);
+}
 
 //Draw opponent
-if(obj_opponent_data.defending_spell[4] &gt;= 1){
-    draw_sprite_ext(player_sprite, -1, x, y, -player_scale, player_scale, 0, c_white, 0.5);
-}else{
-    draw_sprite_ext(player_sprite, -1, x, y, -player_scale, player_scale, 0, c_white, 1);
-}
+draw_sprite_ext(player_sprite, -1, x, y, -player_scale, player_scale, 0, c_white, 1);
 
 //Draw layers in front of opponent
 if(obj_opponent_data.defending_spell[0] &gt;= 1){
@@ -354,8 +431,8 @@ if(obj_opponent_data.defending_spell[2] &gt;= 1){
 if(obj_opponent_data.defending_spell[3] &gt;= 1){
     draw_sprite_ext(spr_air_defense_layer1, -1, x, y, -(player_scale*1.6), player_scale*1.6, 0, c_white, 1);
 }
-if(obj_opponent_data.defending_spell[5] &gt;= 1){
-    draw_sprite_ext(spr_arcane_defense, -1, x, y, -(player_scale*1.2), player_scale*1.2, 0, c_white, 1);
+if(obj_opponent_data.defending_spell[4] &gt;= 1){
+    draw_sprite_ext(spr_shadow_defense_layer1, -1, x-sprite_width/4, y-sprite_height/4, -player_scale*1.4, player_scale*1.4, 0, c_white, 1);
 }
 </string>
           </argument>

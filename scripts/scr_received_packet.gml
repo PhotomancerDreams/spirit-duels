@@ -21,19 +21,24 @@ if(message_id == 1){
         obj_prompt.prompt_text = "Tie";
     }
     instance_create(room_width/2, room_height/2, obj_restart_button);
+}else if(message_id == 4){
+    obj_opponent_data.attack = buffer_read(buffer, buffer_u8);
+    obj_opponent_data.defend = buffer_read(buffer, buffer_u8);
+    obj_opponent_data.focus = buffer_read(buffer, buffer_u8);
+    for(i = 0; i < 6; i++){
+        obj_opponent_data.spell_cast[i] = buffer_read(buffer, buffer_u8);
+    }
+    obj_animator.alarm[1] = 1
 }
 
 if(player_id != noone){
-    player_id.focus_level = buffer_read(buffer, buffer_u8);
-    player_id.player_health = buffer_read(buffer, buffer_u8);
+    var dummy = instance_create(1, 1, obj_dummy_data);
+    dummy.target = player_id;
+    dummy.focus_level = buffer_read(buffer, buffer_u8);
+    dummy.player_health = buffer_read(buffer, buffer_u8);
     for(i = 0; i < 6; i++){
-        player_id.spell_cast[i] = buffer_read(buffer, buffer_u8);
-        player_id.defending_spell[i] = buffer_read(buffer, buffer_u8);
-        player_id.cooldowns[i] = buffer_read(buffer, buffer_u8);
+        dummy.spell_cast[i] = buffer_read(buffer, buffer_u8);
+        dummy.defending_spell[i] = buffer_read(buffer, buffer_u8);
+        dummy.cooldowns[i] = buffer_read(buffer, buffer_u8);
     }
-    
-    obj_player_data.alarm[2] = 1;
-    obj_opponent_data.alarm[2] = 1;
-    obj_music_player1.alarm[0] = 2;
-    room_goto(2);
 }

@@ -26,21 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>base_strength = 0
-sample_relative_strength = 0
-spell_map = ds_map_create()
+compendium_entry = 0
 
-//Enable Lighting
-/*
-d3d_set_lighting(true);
-d3d_light_define_point(1, x, y, depth, 2000, c_white);
-d3d_light_enable(1, true);
-*/
+for(h = 0; h &lt; 7; h++){
+    spell_compendium[0, h] = 0
+}
+
+alarm[0] = 1
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -59,37 +57,76 @@ d3d_light_enable(1, true);
             <kind>1</kind>
             <string>base_strength = scr_base_spell_strength(obj_player_data.spell_cast)
 
-var sample_spell
-for(i = 0; i &lt; 5; i++){
-    sample_spell[i] = 0
+for(height = 0; height &lt; array_height_2d(spell_compendium); height++){
+    for(length = 0; length &lt; array_length_2d(spell_compendium, height); length++){
+        spell_compendium[height,length] = 0
+    }
 }
-sample_spell[5] = obj_opponent_data.focus_level
-sample_relative_strength = scr_relative_spell_strength(obj_player_data.spell_cast, sample_spell)
+
+compendium_entry = 0;
+for(el_index = 0; el_index &lt; 6; el_index++){
+    for(sp_index = 0; sp_index &lt; 6; sp_index++){
+        spell_array[sp_index] = 0
+    }
+    if(obj_opponent_data.cooldowns[el_index] == 0){
+        spell_array = scr_build_spell(spell_array, el_index)
+    }
+}
+
 /*
-while(true){
+var compendium_entry = 0;
+var element_total = 0;
+for(el_index = 0; el_index &lt; 6; el_index++){
+    element_total = 0;
+    for(sp_index = 0; sp_index &lt; 6; sp_index++){
+        spell_array[sp_index] = 0
+    }
+    for(var inner_element_index = el_index; inner_element_index &lt; 6; inner_element_index++){
+        if(element_total &lt; obj_opponent_data.focus_level){
+            if(obj_opponent_data.cooldowns[inner_element_index] == 0 &amp;&amp; spell_array[inner_element_index] == 0){
+                if(el_index == 6){
+                    spell_array[inner_element_index] = obj_opponent_data.focus_level - element_total
+                }else{
+                    spell_array[inner_element_index] = 1;
+                }
+                element_total += spell_array[inner_element_index]
+            }
+        }
+    }
+    spell_array[6] = scr_relative_spell_strength(obj_player_data.spell_cast, spell_array)
+
+    for(height = 0; height &lt; 7; height++){
+        spell_compendium[compendium_entry, height] = spell_array[height];
+    }
+    compendium_entry++;
+}
+*/
+/*
+for(check_index = 0; check_index &lt; ds_list_size(spell_list); check_index++){
+    show_message(string(ds_list_find_value(spell_list, check_index)));
+}*/
+/*
+for(element_included = 0; element_included &lt; 6; element_included++){
     for(i = 0; i &lt; 6; i++){
         spell_array[i] = 0
     }
     var element_total = 0
-    for(element_included = 0; element_included &lt; 6; element_included++){
+    for(element_index = element_included; element_index &lt; 6; element_index++){
         if(element_total &lt; obj_opponent_data.focus_level){
-            for(element_index = element_included; element_index &lt; 6; element_index++){
-                if(obj_opponent_data.cooldowns[element_index] == 0){
-                    if(element_index == 6){
-                        spell_array[element_index] = obj_opponent_data.focus_level - element_total
-                    }else{
-                        spell_array[element_index] = 1;
-                    }
-                    element_total += spell_array[element_index]
+            if(obj_opponent_data.cooldowns[element_index] == 0){
+                if(element_index == 6){
+                    spell_array[element_index] = obj_opponent_data.focus_level - element_total
+                }else{
+                    spell_array[element_index] = 1;
                 }
+                element_total += spell_array[element_index]
             }
-        }else{
-            break
         }
     }
-    ds_map_add(spell_map, spell_array, spell_strength)
+    ds_map_add(spell_map, spell_array, scr_relative_spell_strength(obj_player_data.spell_cast, spell_array))
 }
 */
+//sample_relative_strength = ds_map_find_value(spell_map, ds_map_find_first(spell_map))
 </string>
           </argument>
         </arguments>
@@ -113,13 +150,36 @@ while(true){
           <argument>
             <kind>1</kind>
             <string>var text_size = 1
+var current_spell
+var vertical_offset = sprite_height/6
 
 draw_self()
 draw_set_colour(c_black)
 draw_text_transformed(x, y-sprite_height/2, "Base Strength: " + string(base_strength), text_size, text_size, 0)
-draw_text_transformed(x, y+sprite_height/2, "Relative Strength: " + string(sample_relative_strength), text_size, text_size, 0)
-scr_draw_spell_prism(obj_player_data.spell_cast, x-sprite_width/2.1, y, sprite_width/5, sprite_height/5)
+//scr_draw_spell_prism(obj_player_data.spell_cast, x+sprite_width/4, y-sprite_height/4, sprite_width/5, sprite_height/5)
+//draw_text_transformed(x+sprite_width/2, y-sprite_height/2, "First Current Spell: " + string(current_spell), text_size, text_size, 0)
 
+for(var compendium_entry = 0; compendium_entry &lt; array_height_2d(spell_compendium); compendium_entry++){
+    for(el_index = 0; el_index &lt; array_length_2d(spell_compendium, compendium_entry); el_index++){
+        current_spell[el_index] = spell_compendium[compendium_entry, el_index]
+    }
+    scr_draw_spell_prism(current_spell, x-sprite_width/2.1, y+(compendium_entry*vertical_offset)-sprite_height/3, sprite_width/5, sprite_height/5)
+    draw_set_colour(c_black)
+    draw_text_transformed(x+sprite_width/10, y+(compendium_entry*vertical_offset)-sprite_height/3.1, string(current_spell[array_length_1d(current_spell)-1]), text_size, text_size, 0)
+}
+
+/*
+scr_draw_spell_prism(current_spell, x-sprite_width/2.1, y+vertical_offset, sprite_width/5, sprite_height/5)
+draw_set_colour(c_black)
+draw_text_transformed(x, y+(sprite_height/2)+vertical_offset, "Relative Strength: " + string(ds_map_find_value(spell_map, current_spell)), text_size, text_size, 0)
+current_spell = ds_map_find_next(spell_map, current_spell)
+
+if(!is_undefined(current_spell)){
+    scr_draw_spell_prism(current_spell, x-sprite_width/2.1, y+vertical_offset*2, sprite_width/5, sprite_height/5)
+    draw_set_colour(c_black)
+    draw_text_transformed(x, y+(sprite_height/2)+vertical_offset*2, "Relative Strength: " + string(ds_map_find_value(spell_map, current_spell)), text_size, text_size, 0)
+    current_spell = ds_map_find_next(spell_map, current_spell)
+}*/
 </string>
           </argument>
         </arguments>

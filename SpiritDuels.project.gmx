@@ -24,6 +24,7 @@
     <sprite>sprites\spr_stick_figure_1</sprite>
     <sprite>sprites\spr_stick_figure_2</sprite>
     <sprite>sprites\spr_stick_figure_3</sprite>
+    <sprite>sprites\spr_stick_figure_4</sprite>
     <sprite>sprites\spr_action_selection</sprite>
     <sprite>sprites\spr_heart</sprite>
     <sprite>sprites\spr_cooldown</sprite>
@@ -58,6 +59,12 @@
     <sprite>sprites\spr_arcane_defense_runes</sprite>
     <sprite>sprites\spr_shadow_defense_layer1</sprite>
     <sprite>sprites\spr_shadow_defense_layer2</sprite>
+    <sprite>sprites\spr_fire_attack_layer1</sprite>
+    <sprite>sprites\spr_fire_attack_layer2</sprite>
+    <sprite>sprites\spr_shadow_attack_layer1</sprite>
+    <sprite>sprites\spr_shadow_attack_layer2</sprite>
+    <sprite>sprites\spr_earth_attack_layer1</sprite>
+    <sprite>sprites\spr_earth_attack_layer2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_blue</background>
@@ -69,6 +76,8 @@
     <script>scripts\scr_relative_spell_strength.gml</script>
     <script>scripts\scr_base_spell_strength.gml</script>
     <script>scripts\scr_draw_spell_prism.gml</script>
+    <script>scripts\scr_build_spell.gml</script>
+    <script>scripts\scr_is_in_compendium.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_Segoe</font>
@@ -84,6 +93,7 @@
     <object>objects\obj_music_player1</object>
     <object>objects\obj_animator</object>
     <object>objects\obj_player_data</object>
+    <object>objects\obj_dummy_data</object>
     <object>objects\obj_opponent_data</object>
     <object>objects\obj_player</object>
     <object>objects\obj_opponent</object>
@@ -104,6 +114,7 @@
     <object>objects\obj_prompt</object>
     <object>objects\obj_strength_display</object>
     <object>objects\obj_spellbook</object>
+    <object>objects\obj_attacking_spell</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_title_screen</room>
