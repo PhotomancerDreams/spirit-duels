@@ -77,6 +77,7 @@
     <script>scripts\scr_base_spell_strength.gml</script>
     <script>scripts\scr_draw_spell_prism.gml</script>
     <script>scripts\scr_build_spell.gml</script>
+    <script>scripts\scr_fill_compendium.gml</script>
     <script>scripts\scr_is_in_compendium.gml</script>
   </scripts>
   <fonts name="fonts">
@@ -114,6 +115,7 @@
     <object>objects\obj_prompt</object>
     <object>objects\obj_strength_display</object>
     <object>objects\obj_spellbook</object>
+    <object>objects\obj_spellbook_face</object>
     <object>objects\obj_attacking_spell</object>
   </objects>
   <rooms name="rooms">
@@ -121,6 +123,7 @@
     <room>rooms\room_stage</room>
     <room>rooms\room_action_selection</room>
     <room>rooms\room_element_selection</room>
+    <room>rooms\room_spellbook</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
